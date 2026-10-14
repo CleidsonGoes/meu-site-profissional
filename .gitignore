@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Variáveis de ambiente e informações sensíveis
+.env
+.env.*
+!.env.example
