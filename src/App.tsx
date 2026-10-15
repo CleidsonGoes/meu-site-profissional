@@ -7,6 +7,7 @@ import {
   Monitor,
   Settings,
   X,
+  Smartphone
 } from 'lucide-react';
 import { useState } from 'react';
 import './index.css';
@@ -44,22 +45,37 @@ const services = [
 
 const projects = [
   {
-    category: 'BI & DATA',
-    title: 'Dashboards Power BI',
+    category: "BI & DATA",
+    title: "Dashboards Power BI",
     description:
-      'Visualização de indicadores, análise de desempenho e acompanhamento de resultados.',
+      "Visualização de indicadores, análise de desempenho e acompanhamento de resultados para apoiar decisões.",
+    desktopImage: "/images/projetos/powerbi-desktop.png",
+    mobileImage: "/images/projetos/powerbi-mobile.png",
+    desktopAlt: "Dashboard Power BI na versão desktop",
+    mobileAlt: "Dashboard Power BI na versão mobile",
+    link: "https://app.powerbi.com/view?r=eyJrIjoiOTJkMmYxYmItN2U0ZC00N2ZjLTk0ODktZTFhZWZhYTliNjc4IiwidCI6Ijk4ZTg4MTVmLTljZWEtNDljNC1iYzhjLTljNWM5ZDRhYjRlZSJ9",
   },
   {
-    category: 'SISTEMAS',
-    title: 'Sistema DF-e',
+    category: "SISTEMAS",
+    title: "Sistema DF-e",
     description:
-      'Sistema para cadastro, controle e organização de documentos fiscais eletrônicos.',
+      "Sistema para cadastro, consulta e organização de documentos fiscais eletrônicos.",
+    desktopImage: "/images/projetos/dfe-desktop.png",
+    mobileImage: "/images/projetos/dfe-mobile.png",
+    desktopAlt: "Sistema DF-e na versão desktop",
+    mobileAlt: "Sistema DF-e na versão mobile",
+    link: "https://sistema.cjdatatech.gracigostore.com/login",
   },
   {
-    category: 'GESTÃO',
-    title: 'Sistema de Almoxarifado',
+    category: "GESTÃO",
+    title: "Sistema de Almoxarifado",
     description:
-      'Controle de produtos, entradas, saídas, movimentações e estoque.',
+      "Sistema para gestão de produtos, categorias, fornecedores, entradas, saídas e estoque.",
+    desktopImage: "/images/projetos/almoxarifado-desktop.png",
+    mobileImage: "/images/projetos/almoxarifado-mobile.png",
+    desktopAlt: "Sistema de Almoxarifado na versão desktop",
+    mobileAlt: "Sistema de Almoxarifado na versão mobile",
+    link: "https://sistema-almoxarifado-ten.vercel.app/",
   },
 ];
 
@@ -306,29 +322,84 @@ function App() {
           </div>
 
           <div className="projects-list">
-            {projects.map((project, index) => (
-              <article className="project-card" key={project.title}>
-                <div className="project-image">
-                  <span>Projeto {String(index + 1).padStart(2, '0')}</span>
-                  <div className="project-image-pattern" />
-                </div>
+            <div className="projects-list">
+              {projects.map((project, index) => (
+                <article className="project-card" key={project.title}>
+                  <div className="project-image project-image--responsive">
+                    <div className="project-device project-device--desktop">
+                      <div className="project-device-label">
+                        <Monitor size={16} />
+                        <span>DESKTOP</span>
+                      </div>
 
-                <div className="project-info">
-                  <span className="project-category">
-                    {project.category}
-                  </span>
+                      <div className="project-screen">
+                        <div className="project-placeholder">
+                          <Monitor size={32} />
+                          <span>Imagem desktop</span>
+                        </div>
 
-                  <h3>{project.title}</h3>
+                        <img
+                          src={project.desktopImage}
+                          alt={project.desktopAlt}
+                          onError={(event) => {
+                            event.currentTarget.style.display = "none";
+                          }}
+                        />
+                      </div>
+                    </div>
 
-                  <p>{project.description}</p>
+                    <div className="project-device project-device--mobile">
+                      <div className="project-device-label">
+                        <Smartphone size={15} />
+                        <span>MOBILE</span>
+                      </div>
 
-                  <a href="#contato" className="project-link">
-                    Ver projeto
-                    <ArrowUpRight size={18} />
-                  </a>
-                </div>
-              </article>
-            ))}
+                      <div className="project-phone">
+                        <div className="project-phone-camera" />
+
+                        <div className="project-phone-screen">
+                          <div className="project-placeholder">
+                            <Smartphone size={24} />
+                            <span>Imagem mobile</span>
+                          </div>
+
+                          <img
+                            src={project.mobileImage}
+                            alt={project.mobileAlt}
+                            onError={(event) => {
+                              event.currentTarget.style.display = "none";
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <span className="project-index">
+                      PROJETO 0{index + 1}
+                    </span>
+                  </div>
+
+                  <div className="project-info">
+                    <span className="project-category">
+                      {project.category}
+                    </span>
+
+                    <h3>{project.title}</h3>
+
+                    <p>{project.description}</p>
+
+                    <a
+                      href={project.link}
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Acessar projeto <ArrowUpRight size={18} />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

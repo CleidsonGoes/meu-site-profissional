@@ -1494,3 +1494,249 @@ button {
     min-width: 0;
   }
 }
+
+
+/* PROJETOS: VISUALIZAÇÃO DESKTOP + MOBILE */
+
+.project-image--responsive {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 34px);
+  min-width: 0;
+  min-height: 390px;
+  padding: 48px 24px 60px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 45%,
+      rgba(200, 242, 106, 0.11),
+      transparent 65%),
+    #0b1715;
+}
+
+.project-device {
+  position: relative;
+  min-width: 0;
+}
+
+.project-device--desktop {
+  flex: 1 1 0;
+  max-width: 440px;
+}
+
+.project-device-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: #c8f26a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.project-screen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 5px solid #273632;
+  border-radius: 9px;
+  background: #10201c;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.project-screen::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 10px;
+  background: #273632;
+  content: "";
+}
+
+/* MOSTRAR AS CAPTURAS COMPLETAS */
+
+.project-screen img,
+.project-phone-screen img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.project-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #9ba7a2;
+  font-size: 12px;
+  text-align: center;
+}
+
+.project-placeholder svg {
+  color: #c8f26a;
+}
+
+.project-device--mobile {
+  flex: 0 0 112px;
+  max-width: 112px;
+}
+
+.project-phone {
+  position: relative;
+  padding: 7px;
+  border: 2px solid #53645c;
+  border-radius: 21px;
+  background: #101b18;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+}
+
+.project-phone-camera {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  z-index: 2;
+  width: 28px;
+  height: 5px;
+  border-radius: 8px;
+  background: #101b18;
+  transform: translateX(-50%);
+}
+
+.project-phone-screen {
+  position: relative;
+  aspect-ratio: 9 / 19;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #10201c;
+}
+
+.project-phone-screen .project-placeholder {
+  padding: 8px;
+  font-size: 10px;
+}
+
+.project-phone-screen .project-placeholder svg {
+  width: 22px;
+  height: 22px;
+}
+
+.project-index {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  color: #c8f26a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.project-info {
+  min-width: 0;
+}
+
+.project-info h3 {
+  overflow-wrap: anywhere;
+}
+
+.project-info p {
+  overflow-wrap: anywhere;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c8f26a;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.project-link:hover {
+  gap: 13px;
+}
+
+.project-link:focus-visible {
+  outline: 2px solid #c8f26a;
+  outline-offset: 5px;
+}
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+  .project-image--responsive {
+    min-height: 330px;
+    padding-inline: 20px;
+  }
+
+  .project-device--mobile {
+    flex-basis: 96px;
+    max-width: 96px;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  .project-image--responsive {
+    min-height: 290px;
+    gap: 16px;
+    padding: 38px 16px 55px;
+  }
+
+  .project-device-label {
+    gap: 5px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .project-device--mobile {
+    flex-basis: 83px;
+    max-width: 83px;
+  }
+
+  .project-screen {
+    border-width: 3px;
+    border-radius: 6px;
+    background: #0b1715;
+  }
+
+  .project-phone {
+    padding: 5px;
+    border-radius: 17px;
+  }
+
+  .project-phone-screen {
+    border-radius: 12px;
+    background: #0b1715;
+  }
+
+  .project-index {
+    right: 16px;
+    bottom: 19px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .project-image--responsive {
+    gap: 12px;
+    padding-inline: 12px;
+  }
+
+  .project-device--mobile {
+    flex-basis: 72px;
+    max-width: 72px;
+  }
+}
