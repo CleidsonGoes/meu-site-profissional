@@ -173,41 +173,76 @@ function App() {
           <div className="hero-number">01</div>
         </section>
 
-        <section id="sobre" className="section about">
-          <div className="section-label">01 — SOBRE</div>
+        <section id="sobre" className="section about-section">
+          <div className="section-heading">
+            <span className="section-kicker">01 / SOBRE</span>
+            <h2>
+              Tecnologia com propósito.
+              <br />
+              <span>Dados que geram valor.</span>
+            </h2>
+          </div>
 
-          <div className="about-grid">
-            <div className="about-title">
-              <p className="eyebrow">Quem está por trás</p>
-              <h2>
-                Tecnologia com
-                <br />
-                <em>visão de negócio.</em>
-              </h2>
+          <div className="about-content">
+            <div className="about-intro">
+              <p className="about-lead">
+                Olá, sou Cleidson Goes.
+              </p>
+
+              <p>
+                Atuo na interseção entre dados, tecnologia e negócios,
+                desenvolvendo soluções que ajudam a transformar informações
+                em decisões mais claras e processos mais eficientes.
+              </p>
+
+              <p>
+                Minha experiência envolve Business Intelligence, análise de
+                dados, automação de tarefas e desenvolvimento de sistemas,
+                sempre buscando unir visão analítica e necessidades reais
+                da operação.
+              </p>
+
+              <a href="#projetos" className="about-link">
+                Conheça meus projetos <ArrowUpRight size={18} />
+              </a>
             </div>
 
-            <div className="about-content">
-              <p className="large-text">
-                Sou <strong>Cleidson Goes</strong>, profissional com atuação
-                em dados, Business Intelligence, sistemas e processos.
-              </p>
+            <div className="about-highlights">
+              <article className="about-highlight">
+                <span className="highlight-number">01</span>
+                <div>
+                  <h3>Visão analítica</h3>
+                  <p>
+                    Indicadores, dashboards e informações que apoiam
+                    decisões de negócio.
+                  </p>
+                </div>
+                <BarChart3 size={24} />
+              </article>
 
-              <p>
-                Meu trabalho une tecnologia e conhecimento de negócio para
-                desenvolver soluções que ajudam empresas a organizar
-                informações, acompanhar indicadores e tomar decisões com mais
-                clareza.
-              </p>
+              <article className="about-highlight">
+                <span className="highlight-number">02</span>
+                <div>
+                  <h3>Eficiência operacional</h3>
+                  <p>
+                    Automação e melhoria de processos para reduzir tarefas
+                    manuais e retrabalho.
+                  </p>
+                </div>
+                <Settings size={24} />
+              </article>
 
-              <p>
-                Tenho experiência com Power BI, SQL, Python, Excel, sistemas
-                web e automação de processos.
-              </p>
-
-              <a href="#contato" className="text-link">
-                Vamos conversar
-                <ArrowUpRight size={17} />
-              </a>
+              <article className="about-highlight">
+                <span className="highlight-number">03</span>
+                <div>
+                  <h3>Soluções digitais</h3>
+                  <p>
+                    Sistemas e ferramentas construídos para resolver
+                    problemas práticos.
+                  </p>
+                </div>
+                <Monitor size={24} />
+              </article>
             </div>
           </div>
         </section>
