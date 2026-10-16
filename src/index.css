@@ -1740,3 +1740,69 @@ button {
     max-width: 72px;
   }
 }
+
+
+/* OBJETIVO E TECNOLOGIAS DOS PROJETOS */
+
+.project-objective {
+  margin-top: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-objective>span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.project-objective p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 26px;
+}
+
+.project-technologies span {
+  padding: 7px 11px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.project-technologies span:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-info .project-link {
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .project-objective {
+    margin-top: 20px;
+    padding: 15px 0;
+  }
+
+  .project-technologies {
+    gap: 7px;
+    margin: 18px 0 24px;
+  }
+
+  .project-technologies span {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+}

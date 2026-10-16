@@ -43,41 +43,52 @@ const services = [
   },
 ];
 
+
 const projects = [
   {
-    category: "BI & DATA",
-    title: "Dashboards Power BI",
+    category: 'BI & DATA',
+    title: 'Dashboards Power BI',
     description:
-      "Visualização de indicadores, análise de desempenho e acompanhamento de resultados para apoiar decisões.",
-    desktopImage: "/images/projetos/powerbi-desktop.png",
-    mobileImage: "/images/projetos/powerbi-mobile.png",
-    desktopAlt: "Dashboard Power BI na versão desktop",
-    mobileAlt: "Dashboard Power BI na versão mobile",
-    link: "https://app.powerbi.com/view?r=eyJrIjoiOTJkMmYxYmItN2U0ZC00N2ZjLTk0ODktZTFhZWZhYTliNjc4IiwidCI6Ijk4ZTg4MTVmLTljZWEtNDljNC1iYzhjLTljNWM5ZDRhYjRlZSJ9",
+      'Visualização de indicadores, análise de desempenho e acompanhamento de resultados para apoiar decisões.',
+    objective:
+      'Facilitar a análise de indicadores e tornar informações relevantes mais acessíveis para a tomada de decisão.',
+    technologies: ['Power BI', 'DAX', 'Excel', 'MySQL', 'Google planilha', 'ETL'],
+    desktopImage: '/images/projetos/powerbi-desktop.png',
+    mobileImage: '/images/projetos/powerbi-mobile.png',
+    desktopAlt: 'Dashboard Power BI na versão desktop',
+    mobileAlt: 'Dashboard Power BI na versão mobile',
+    link: 'https://app.powerbi.com/view?r=eyJrIjoiOTJkMmYxYmItN2U0ZC00N2ZjLTk0ODktZTFhZWZhYTliNjc4IiwidCI6Ijk4ZTg4MTVmLTljZWEtNDljNC1iYzhjLTljNWM5ZDRhYjRlZSJ9',
   },
   {
-    category: "SISTEMAS",
-    title: "Sistema DF-e",
+    category: 'SISTEMAS',
+    title: 'Sistema DF-e',
     description:
-      "Sistema para cadastro, consulta e organização de documentos fiscais eletrônicos.",
-    desktopImage: "/images/projetos/dfe-desktop.png",
-    mobileImage: "/images/projetos/dfe-mobile.png",
-    desktopAlt: "Sistema DF-e na versão desktop",
-    mobileAlt: "Sistema DF-e na versão mobile",
-    link: "https://sistema.cjdatatech.gracigostore.com/login",
+      'Sistema para cadastro, consulta e organização de documentos fiscais eletrônicos.',
+    objective:
+      'Centralizar os registros de documentos fiscais e facilitar sua consulta e organização.',
+    technologies: ['React', 'TypeScript', 'Vite', 'MySQL'],
+    desktopImage: '/images/projetos/dfe-desktop.png',
+    mobileImage: '/images/projetos/dfe-mobile.png',
+    desktopAlt: 'Sistema DF-e na versão desktop',
+    mobileAlt: 'Sistema DF-e na versão mobile',
+    link: 'https://sistema.cjdatatech.gracigostore.com/login',
   },
   {
-    category: "GESTÃO",
-    title: "Sistema de Almoxarifado",
+    category: 'GESTÃO',
+    title: 'Sistema de Almoxarifado',
     description:
-      "Sistema para gestão de produtos, categorias, fornecedores, entradas, saídas e estoque.",
-    desktopImage: "/images/projetos/almoxarifado-desktop.png",
-    mobileImage: "/images/projetos/almoxarifado-mobile.png",
-    desktopAlt: "Sistema de Almoxarifado na versão desktop",
-    mobileAlt: "Sistema de Almoxarifado na versão mobile",
-    link: "https://sistema-almoxarifado-ten.vercel.app/",
+      'Sistema para gestão de produtos, categorias, fornecedores, entradas, saídas e estoque.',
+    objective:
+      'Organizar o controle de estoque e apoiar o acompanhamento das operações de almoxarifado.',
+    technologies: ['React', 'TypeScript', 'Vite', 'PWA'],
+    desktopImage: '/images/projetos/almoxarifado-desktop.png',
+    mobileImage: '/images/projetos/almoxarifado-mobile.png',
+    desktopAlt: 'Sistema de Almoxarifado na versão desktop',
+    mobileAlt: 'Sistema de Almoxarifado na versão mobile',
+    link: 'https://sistema-almoxarifado-ten.vercel.app/',
   },
 ];
+
 
 const technologies = [
   'Power BI',
@@ -322,84 +333,92 @@ function App() {
           </div>
 
           <div className="projects-list">
-            <div className="projects-list">
-              {projects.map((project, index) => (
-                <article className="project-card" key={project.title}>
-                  <div className="project-image project-image--responsive">
-                    <div className="project-device project-device--desktop">
-                      <div className="project-device-label">
-                        <Monitor size={16} />
-                        <span>DESKTOP</span>
+            {projects.map((project, index) => (
+              <article className="project-card" key={project.title}>
+                <div className="project-image project-image--responsive">
+                  <div className="project-device project-device--desktop">
+                    <div className="project-device-label">
+                      <Monitor size={16} />
+                      <span>DESKTOP</span>
+                    </div>
+
+                    <div className="project-screen">
+                      <div className="project-placeholder">
+                        <Monitor size={32} />
                       </div>
 
-                      <div className="project-screen">
+                      <img
+                        src={project.desktopImage}
+                        alt={project.desktopAlt}
+                        onError={(event) => {
+                          event.currentTarget.style.display = "none";
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="project-device project-device--mobile">
+                    <div className="project-device-label">
+                      <Smartphone size={15} />
+                      <span>MOBILE</span>
+                    </div>
+
+                    <div className="project-phone">
+                      <div className="project-phone-camera" />
+
+                      <div className="project-phone-screen">
                         <div className="project-placeholder">
-                          <Monitor size={32} />
-                          <span>Imagem desktop</span>
+                          <Smartphone size={24} />
                         </div>
 
                         <img
-                          src={project.desktopImage}
-                          alt={project.desktopAlt}
+                          src={project.mobileImage}
+                          alt={project.mobileAlt}
                           onError={(event) => {
                             event.currentTarget.style.display = "none";
                           }}
                         />
                       </div>
                     </div>
-
-                    <div className="project-device project-device--mobile">
-                      <div className="project-device-label">
-                        <Smartphone size={15} />
-                        <span>MOBILE</span>
-                      </div>
-
-                      <div className="project-phone">
-                        <div className="project-phone-camera" />
-
-                        <div className="project-phone-screen">
-                          <div className="project-placeholder">
-                            <Smartphone size={24} />
-                            <span>Imagem mobile</span>
-                          </div>
-
-                          <img
-                            src={project.mobileImage}
-                            alt={project.mobileAlt}
-                            onError={(event) => {
-                              event.currentTarget.style.display = "none";
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <span className="project-index">
-                      PROJETO 0{index + 1}
-                    </span>
                   </div>
 
-                  <div className="project-info">
-                    <span className="project-category">
-                      {project.category}
-                    </span>
+                  <span className="project-index">
+                    PROJETO 0{index + 1}
+                  </span>
+                </div>
 
-                    <h3>{project.title}</h3>
+                <div className="project-info">
+                  <span className="project-category">
+                    {project.category}
+                  </span>
 
-                    <p>{project.description}</p>
+                  <h3>{project.title}</h3>
 
-                    <a
-                      href={project.link}
-                      className="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Acessar projeto <ArrowUpRight size={18} />
-                    </a>
+
+                  <p>{project.description}</p>
+
+                  <div className="project-objective">
+                    <span>OBJETIVO</span>
+                    <p>{project.objective}</p>
                   </div>
-                </article>
-              ))}
-            </div>
+
+                  <div className="project-technologies">
+                    {project.technologies.map((technology) => (
+                      <span key={technology}>{technology}</span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={project.link}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Acessar projeto <ArrowUpRight size={18} />
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
